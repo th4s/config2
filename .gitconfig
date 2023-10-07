@@ -1,0 +1,51 @@
+[user]
+    email = th4s@metavoid.xyz
+    name = th4s
+    signingkey = 95989B3DE6520953
+
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = side-by-side line-numbers decorations
+    whitespace-error-style = 22 reverse
+
+[delta "decorations"]
+    commit-decoration-style = bold cyan box ul
+    file-style = bold yellow 
+    file-decoration-style = cyan box ul
+    hunk-header-style = omit
+    line-numbers-zero-style = yellow
+
+[diff]
+    tool = nvimdiff
+
+[difftool]
+    prompt = false
+    trustExitCode = true
+
+[merge]
+    tool = nvimdiff
+    ff = false
+    commit = false
+
+[mergetool]
+    prompt = false
+    trustExitCode = true
+
+[pull]
+    ff = only
+
+[init]
+    defaultBranch = main
+
+[credential]
+    helper = /usr/lib/git-core/git-credential-libsecret
+
+[rerere]
+	enabled = true
+[commit]
+	gpgsign = true
