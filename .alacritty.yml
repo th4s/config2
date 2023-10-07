@@ -1,0 +1,31 @@
+# Alacritty Config
+
+window:
+  opacity: 0.6
+  title: Alacritty
+  dynamic_title: false
+
+font:
+  normal:
+    family: Droid Sans Mono Nerd Font 
+
+  size: 13.0
+
+  offset:
+    y: 1
+
+cursor:
+  style:
+    blinking: On
+
+  blink_interval: 500
+  blink_timeout: 0
+  thickness: 0.15
+
+shell:
+  program: /bin/fish
+  #args:
+    #- --login
+
+working_directory: /home/th4s
+
