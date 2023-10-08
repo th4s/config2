@@ -3,44 +3,6 @@ if ! status is-interactive || status is-login
     return
 end
 
-# Set color scheme
-fish_set_colors
-
-# Disable greeting
-set -U fish_greeting
-
-# GPG Settings
-set -Ux GPG_TTY (tty)
-
-# Set editor 
-if test -n "$(command -v nvim)"
-    set -Ux EDITOR "/usr/bin/nvim"
-    alias n nvim
-end
-
-# Set visual and editor variables
-set -Ux VISUAL $EDITOR
-
-# Set some rust stuff
-if test -d "$HOME"/.cargo/bin
-    # Append rust programs to PATH
-    set PATH "$HOME"/.cargo/bin $PATH
-
-    # Some useful aliases
-    alias c cargo
-    alias cc "c c"
-    alias ct "c t"
-end
-
-if test -n "$(command -v xdg-open)"
-    alias open xdg-open
-    alias o open
-end
-
-# Some useful everyday aliases
-alias ... "cd ../.."
-alias .... "cd ../../.."
-alias ss "source "$HOME"/.config/fish/config.fish"
 
 # A better ls alternative
 if test -n "$(command -v eza)"
@@ -67,14 +29,6 @@ if test -n "$(command -v bat)" && test -n "$(command -v xclip)"
     end
 end
 
-
-# Git
-if test -n "$(command -v git)"
-    alias gs "git status -sb"
-    alias ga "git add -A"
-    alias gd "git diff HEAD"
-    alias gl "git log"
-end
 
 # VPN
 if test -n "$(command -v wg)" && test -n "$(command -v wg-quick)"
@@ -124,7 +78,4 @@ end
 function random-pk --description "Generate a random private key for Ethereum"
     cat /dev/urandom | tr -dc 'a-f0-9' | fold -w 64 | head -n $argv[1]
 end
-
-
-    
 
