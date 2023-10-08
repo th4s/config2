@@ -1,8 +1,10 @@
 function fish_prompt --description 'Write out the prompt'
-    set -l last_status $status
 
-    prompt_login
+    # Username
+    set_color $fish_color_quote
+    echo -n (whoami)
 
+    set_color normal
     echo -n ':'
 
     # PWD
@@ -10,6 +12,7 @@ function fish_prompt --description 'Write out the prompt'
     echo -n (prompt_pwd)
     set_color normal
 
+    # Git
     set -q __fish_git_prompt_showdirtystate
     or set -g __fish_git_prompt_showdirtystate 1
     set -q __fish_git_prompt_showuntrackedfiles
@@ -45,8 +48,7 @@ function fish_prompt --description 'Write out the prompt'
     set -q __fish_git_prompt_char_stateseparator
     or set -g __fish_git_prompt_char_stateseparator '⚡'
     fish_vcs_prompt '|%s'
-    echo
 
-    echo -n '➤ '
-    set_color normal
+    # Arrow
+    echo -n ' ➤ '
 end

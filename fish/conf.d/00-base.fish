@@ -9,20 +9,23 @@ setxkbmap -option caps:ctrl_modifier,shift:both_capslock
 # Set color scheme
 fish_set_colors
 
+# Do not abbreviate directories
+set -g fish_prompt_pwd_dir_length 0
+
 # Disable greeting
-set -U fish_greeting
+set -g fish_greeting
 
 # GPG Settings
-set -Ux GPG_TTY (tty)
+set -gx GPG_TTY (tty)
 
 # Set editor 
 if test -n "$(command -v nvim)"
-    set -Ux EDITOR "/usr/bin/nvim"
+    set -gx EDITOR "/usr/bin/nvim"
     alias n nvim
 end
 
 # Set visual and editor variables
-set -Ux VISUAL $EDITOR
+set -gx VISUAL $EDITOR
 
 # Set some rust aliases
 if test -n "$(command -v cargo)"
