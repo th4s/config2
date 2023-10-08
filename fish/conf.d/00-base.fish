@@ -19,7 +19,7 @@ set -g fish_greeting
 set -gx GPG_TTY (tty)
 
 # Set editor 
-if test -n "$(command -v nvim)"
+if test -n (command -q nvim)
     set -gx EDITOR "/usr/bin/nvim"
     alias n nvim
 end
@@ -28,14 +28,14 @@ end
 set -gx VISUAL $EDITOR
 
 # Set some rust aliases
-if test -n "$(command -v cargo)"
+if test -n (command -q cargo)
     # Some useful aliases
     alias c cargo
     alias cc "c c"
     alias ct "c t"
 end
 
-if test -n "$(command -v xdg-open)"
+if test -n (command -q xdg-open)
     alias open xdg-open
     alias o open
 end
@@ -46,7 +46,7 @@ alias .... "cd ../../.."
 alias ss "source "$HOME"/.config/fish/config.fish"
 
 # Git
-if test -n "$(command -v git)"
+if test -n (command -q git)
     alias gs "git status -sb"
     alias ga "git add -A"
     alias gd "git diff HEAD"

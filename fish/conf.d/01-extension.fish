@@ -4,7 +4,7 @@ if ! status is-interactive || status is-login
 end
 
 # A better ls alternative
-if test -n "$(command -v eza)"
+if test -n (command -q eza)
     alias ls "eza --icons"
     alias ll "eza -algF --icons"
 
@@ -18,7 +18,7 @@ if test -n "$(command -v eza)"
 end
 
 # Copy whole file, or lines A:B from a file to clipboard
-if test -n "$(command -v bat)" && test -n "$(command -v xclip)" 
+if test -n (command -q bat) && test -n (command -q xclip) 
     function lc --description "Copy content of a file to clipboard" 
         if test (count $argv) -eq 1
             bat -pp $argv[1] | xclip -se c
@@ -29,7 +29,7 @@ if test -n "$(command -v bat)" && test -n "$(command -v xclip)"
 end
 
 # VPN
-if test -n "$(command -v wg)" && test -n "$(command -v wg-quick)"
+if test -n (command -q wg) && test -n (command -q wg-quick)
     function vpn --description "Connect to a VPN"
         if test $argv[1] = "u"
             wg-quick up $argv[2]
@@ -57,7 +57,7 @@ function calc --description "A simple calculator"
 end
 
 # Configure xclip
-if test -n "$(command -v xclip)"
+if test -n (command -q xclip)
     # copy to clipboard
     alias xc "xclip -se c"
     # copy to pirmary buffer
