@@ -3,7 +3,6 @@ if ! status is-interactive || status is-login
     return
 end
 
-
 # A better ls alternative
 if test -n "$(command -v eza)"
     alias ls "eza --icons"
@@ -29,7 +28,6 @@ if test -n "$(command -v bat)" && test -n "$(command -v xclip)"
     end
 end
 
-
 # VPN
 if test -n "$(command -v wg)" && test -n "$(command -v wg-quick)"
     function vpn --description "Connect to a VPN"
@@ -54,6 +52,7 @@ end
 
 # Calculator
 function calc --description "A simple calculator"
+    # Set comma to decimal point on German keyboard
     xmodmap -e "keycode 91 mod2 = KP_Delete period"; bc -ql; xmodmap -e "keycode 91 mod2 = KP_Delete comma"
 end
 
@@ -65,8 +64,14 @@ if test -n "$(command -v xclip)"
     alias xb "xclip"
 end
 
+# Switch wifi network
+function switch-net --description "Switch wifi network"
+    wpa_cli list_networks
+    read -l -n 1 -P "Please select a network: " network
+    wpa_cli select_network $network
+end
 
-# Some useful functions
+# Some more useful functions
 function where --description "Recursively search for a file"
     find . -iname "*$argv[1]*"
 end
