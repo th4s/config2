@@ -1,5 +1,5 @@
-# Return if not interactive or login shell 
-if ! status is-interactive || status is-login
+# Return if not interactive
+if ! status is-interactive
     return
 end
 
