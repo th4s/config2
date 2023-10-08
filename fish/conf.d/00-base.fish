@@ -3,6 +3,9 @@ if ! status is-interactive || status is-login
     return
 end
 
+# Set CAPSLOCK as an additional CTRL
+setxkbmap -option caps:ctrl_modifier,shift:both_capslock
+
 # Set color scheme
 fish_set_colors
 
