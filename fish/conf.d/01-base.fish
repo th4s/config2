@@ -3,9 +3,6 @@ if ! status is-interactive
     return
 end
 
-# Set CAPSLOCK as an additional CTRL
-setxkbmap -option caps:ctrl_modifier,shift:both_capslock
-
 # Set color scheme
 fish_set_colors
 
@@ -14,9 +11,6 @@ set -g fish_prompt_pwd_dir_length 0
 
 # Disable greeting
 set -g fish_greeting
-
-# GPG Settings
-set -gx GPG_TTY (tty)
 
 # Set editor 
 if test -n (command -q nvim)
@@ -30,6 +24,7 @@ set -gx VISUAL $EDITOR
 # Set some rust aliases
 if test -n (command -q cargo)
     # Some useful aliases
+    alias rsup "rustup update && cargo install-update --all"
     alias c cargo
     alias cc "c c"
     alias ct "c t"
