@@ -13,7 +13,10 @@ set -g fish_prompt_pwd_dir_length 0
 set -g fish_greeting
 
 # Set up ssh agent
-eval (ssh-agent -c)
+eval (ssh-agent -c) > /dev/null
+
+# Set up config folder
+set -g XDG_CONFIG_HOME "$HOME/.config"
 
 # Set editor 
 if test -n (command -q nvim)
