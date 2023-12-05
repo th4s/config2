@@ -12,6 +12,9 @@ set -g fish_prompt_pwd_dir_length 0
 # Disable greeting
 set -g fish_greeting
 
+# Set up ssh agent
+eval (ssh-agent -c)
+
 # Set editor 
 if test -n (command -q nvim)
     set -gx EDITOR "/usr/bin/nvim"
