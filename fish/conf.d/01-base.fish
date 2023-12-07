@@ -15,6 +15,13 @@ set -g fish_greeting
 # Set up ssh agent
 eval (ssh-agent -c) > /dev/null
 
+# Add ssh keys
+for file in $HOME/.ssh/*.pub 
+    set filename (string replace -r '.pub$' '' -- $file)
+    ssh-add -q $filename
+end
+
+
 # Set editor 
 if test -n (command -q nvim)
     set -gx EDITOR "/usr/bin/nvim"
