@@ -1,0 +1,26 @@
+[font]
+size = 13
+
+[font.bold]
+family = "Hack Nerd Font Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "Hack Nerd Font Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "Hack Nerd Font Mono"
+style = "Italic"
+
+[font.normal]
+family = "Hack Nerd Font Mono"
+style = "Regular"
+
+[shell]
+program = "/bin/fish"
+
+[window]
+dynamic_title = false
+opacity = 0.8
+title = "Alacritty"
