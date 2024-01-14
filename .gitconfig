@@ -1,7 +1,6 @@
 [user]
     email = th4s@metavoid.xyz
     name = th4s
-    signingkey = 95989B3DE6520953
 
 [core]
     pager = delta
@@ -43,4 +42,4 @@
     defaultBranch = main
 
 [rerere]
-	enabled = true
+    enabled = true
