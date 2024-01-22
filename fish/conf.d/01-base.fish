@@ -13,11 +13,9 @@ set -g fish_prompt_pwd_dir_length 0
 set -g fish_greeting
 
 # Set up ssh agent
-if test -z (pgrep ssh-agent | string collect)
-    eval (ssh-agent -c) > /dev/null
-    set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
-    set -Ux SSH_AGENT_PID $SSH_AGENT_PID
-end
+eval (ssh-agent -c) > /dev/null
+set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
+set -Ux SSH_AGENT_PID $SSH_AGENT_PID
 
 # Set editor 
 if test -n (command -q nvim)
