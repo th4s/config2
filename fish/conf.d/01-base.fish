@@ -33,6 +33,7 @@ if test -n (command -q cargo)
     alias c cargo
     alias cc "c c"
     alias ct "c t"
+    alias cr "c r"
 end
 
 if test -n (command -q xdg-open)
