@@ -17,10 +17,12 @@ style = "Italic"
 family = "Hack Nerd Font Mono"
 style = "Regular"
 
-[shell]
+[terminal.shell]
 program = "/bin/fish"
 
 [window]
 dynamic_title = false
 opacity = 0.8
 title = "Alacritty"
+
+[terminal]
