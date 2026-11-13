@@ -54,3 +54,5 @@ if test -n (command -q git)
     alias gl "git log"
 end
 
+# PATH extensions
+export PATH="$HOME/.local/bin:$PATH"
